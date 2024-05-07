@@ -16,9 +16,18 @@ const classSchema = new mongoose.Schema(
             type: Date,
             required: true,
         },
+        country: {
+            type: String,
+            required: true,
+        },
         link: {
             type: String,
             required: true,
+        },
+        status: {
+            type: String,
+            default: 'pending',
+            enum: ['pending', 'completed'],
         },
     },
     {

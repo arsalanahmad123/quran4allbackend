@@ -43,4 +43,20 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = { login }
+const getTotalStudentsAndTeachers = async (req, res) => {
+    try {
+        const totalStudents = await Student.countDocuments()
+        const totalTeachers = await Teacher.countDocuments()
+
+        return res.status(200).json({
+            totalStudents,
+            totalTeachers,
+        })
+    } catch (error) {
+        res.status(error.status || 500).json({
+            msg: error.message,
+        })
+    }
+}
+
+module.exports = { login, getTotalStudentsAndTeachers }

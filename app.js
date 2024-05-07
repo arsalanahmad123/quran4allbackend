@@ -12,10 +12,12 @@ app.use(cors())
 const authRouter = require('./routes/auth.routes')
 const teacherRouter = require('./routes/teacher.routes')
 const studentRouter = require('./routes/student.routes')
+const classRouter = require('./routes/class.routes')
 
 app.use('/api/auth', authRouter)
 app.use('/api/teacher', teacherRouter)
 app.use('/api/student', studentRouter)
+app.use('/api/class', classRouter)
 
 // Start Server
 
